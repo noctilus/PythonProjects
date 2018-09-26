@@ -16,4 +16,3 @@ def generator():
         result += stepping
 
 
-generator()

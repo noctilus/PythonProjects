@@ -3,7 +3,7 @@
 
 
 lower_limit = "79-900"
-upper_limit = "79-903"
+upper_limit = "80-155"
 
 
 def generator():
@@ -12,7 +12,7 @@ def generator():
 
     for i in range(lower_int, upper_int - 1):
         i += 1
-        print(str(i / 1000).replace(".", "-"))
+        print(str(i)[slice(0, 2)] + "-" + str(i)[slice(2, 5)])  # you can do .format as well
 
 
 generator()

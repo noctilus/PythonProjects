@@ -14,6 +14,3 @@ full_list = list(range(1, n + 1))
 def missing_elements():
     for x in entry_elements:
         full_list.remove(x)
-
-
-# missing_elements()

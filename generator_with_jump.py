@@ -16,3 +16,5 @@ def generator():
     while result < end + stepping:
         print(result)
         result += stepping
+
+generator()

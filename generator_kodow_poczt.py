@@ -13,3 +13,5 @@ def generator():
     for i in range(lower_int, upper_int - 1):
         i += 1
         print(str(i)[slice(0, 2)] + "-" + str(i)[slice(2, 5)])  # not sure if .format would be better ?
+
+generator()

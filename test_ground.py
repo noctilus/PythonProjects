@@ -12,3 +12,10 @@ a={1,2}
 print (type(a))
 
 #721 201 661 Marcin Helman 
+name,color,age = 'name ','color', 4
+print (name)
+print (color)
+print(age)
+
+for x in range(3  ):
+    print('hello')

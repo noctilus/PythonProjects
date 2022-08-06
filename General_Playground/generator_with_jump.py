@@ -17,4 +17,5 @@ def generator():
         print(result)
         result += stepping
 
+
 generator()

@@ -10,8 +10,8 @@ else:
     print("Usage: python3 scanner.py <ip>")
     sys.exit()
 
-#Add pretty banner 
+# Add pretty banner
 print("-"*25)
 print("Scanning target "+target)
-print("Time started: "+ str(datetime.now()))
+print("Time started: " + str(datetime.now()))
 print("-"*25)

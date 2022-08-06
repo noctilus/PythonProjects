@@ -18,4 +18,5 @@ def missing_elements():
 # będzie szybciej ?
 # set.difference() zamiast list?
 
+
 missing_elements()

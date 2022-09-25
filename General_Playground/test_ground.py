@@ -25,6 +25,6 @@
 
 # for x in range(3):
 #     print('hello')
-limit = 100 
-mark = [True for i in range(limit + 1)]
+LIMIT = 100
+mark = [True for i in range(LIMIT + 1)]
 print(mark)

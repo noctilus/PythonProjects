@@ -7,7 +7,7 @@ UPPER_LIMIT = "80-155"
 
 
 def generator():
-    """reqd"""
+    """required"""
     lower_int = int(LOWER_LIMIT.replace("-", ""))
     upper_int = int(UPPER_LIMIT.replace("-", ""))
 

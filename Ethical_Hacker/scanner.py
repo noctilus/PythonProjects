@@ -1,9 +1,11 @@
 import sys
+
+
 import socket
 from datetime import datetime
 
 if len(sys.argv) == 2:
-    target = socket.gethostname(sys.argv[1])
+    target = socket.gethostname()
 
 else:
     print("Invalid number of arguments")

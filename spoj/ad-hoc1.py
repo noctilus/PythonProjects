@@ -22,17 +22,18 @@
 #     if i == 42:
 #         break
 #     print(i)
-    
 
 
 # print("The end")
 def take_input():
+    """Check if inputed no == 42"""
     input_number = int(input())
-    
-    if input_number==42:
+
+    if input_number == 42:
         exit()
     else:
         print(input_number)
     take_input()
+
 
 take_input()

@@ -1,3 +1,6 @@
+"""
+pinging python script
+"""
 import sys
 
 

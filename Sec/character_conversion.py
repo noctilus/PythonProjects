@@ -1,10 +1,10 @@
-#! /bin/python3
+#! /usr/bin/env  python3
 """Character conversion script."""
 from tabulate import tabulate
 
 tabulation_data = []
 
-character = input('Input single character to convert: ')
+character = input('Input character or string to convert ')
 for letter in character:
     tabulation_data.append(('ASCII:', (ascii(letter))))
     tabulation_data.append(("UNICODE:", (ord(letter))))
@@ -20,5 +20,4 @@ else:
     print('CHR: N/A')
     print('UNICHR: N/A')
     print('HEX: N/A')
-
 print(tabulate(tabulation_data))

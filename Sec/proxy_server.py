@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Python Proxy Server."""
 
 import select
@@ -25,16 +26,16 @@ class Forward:
         try:
             self.forward.connect((host, port))
             return self.forward
-        except Exception as e:
-            print(e)
+        except Exception as except_code:
+            print(except_code)
             return False
 
 
 class TheServer:
     """Server Class."""
 
-    input_list = []
-    channel = {}
+    input_list = [] #type:list[str]
+    channel = {} #
 
     def __init__(self, host, port):
         """Server instance initialisation."""

@@ -33,10 +33,16 @@ def randomness_generator(leng):
     while len(resulting_string) < leng:
         character = (random.randrange(33, 123))
 
-        if 32 < character < 48 or 57 < character < 65 or 90 < character < 97:  # exclude special chars
+        if 32 < character < 48:
+            # exclude special chars
             # print(character, sep="", end="")
             # print(" rerandomizing")
             pass
+        if 57 < character < 65:
+            pass
+        if 90 < character < 97:
+            pass
+
         else:
             resulting_string.append(chr(character))
     return resulting_string
@@ -46,12 +52,11 @@ a = randomness_generator(chars_number)  # , alphannum=True, specialchars=True)
 print(a)
 print("-"*20)
 print("Printing one by one")
-
+z=""
+z = z.join(a)
+print(z)
 for number in range(int(chars_number)):
-    print(a[0:number], end="\r")
-    time.sleep(1/10)
-
-# for _ in a:
-# print(_, ord(_))
-# print(ord("\""))
-# print(ord("!"))
+    time.sleep(1/50)
+    print(z[0:number], end="\r")
+print(z)
+print("")

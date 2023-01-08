@@ -7,5 +7,5 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-# @lc code=end
+        pass    
+    # @lc code=end

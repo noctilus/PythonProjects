@@ -6,7 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        
-# @lc code=end
+    def my_Sqrt(self, x: int) -> int:
 
+        # @lc code=end
+        pass

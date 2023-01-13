@@ -28,7 +28,7 @@ oper = platform.system()
 if (oper == "Windows"):
     ping = "ping -n 1 "
 else:
-    ping = "ping -c 1 "
+    ping = "ping -c 1 -i 1 "
 
 time1 = datetime.datetime.now()
 print("Scanning in progress")

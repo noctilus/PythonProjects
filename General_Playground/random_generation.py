@@ -50,13 +50,13 @@ def randomness_generator(leng):
 
 a = randomness_generator(chars_number)  # , alphannum=True, specialchars=True)
 print(a)
-print("-"*20)
+print("-" * 20)
 print("Printing one by one")
-z=""
+z = ""
 z = z.join(a)
 print(z)
 for number in range(int(chars_number)):
-    time.sleep(1/50)
+    time.sleep(1 / 50)
     print(z[0:number], end="\r")
 print(z)
 print("")

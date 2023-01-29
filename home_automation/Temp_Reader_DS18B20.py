@@ -17,7 +17,7 @@ print(sensor2)
 sens2 = float(sensor2)
 try:
     # conect to an existing database
-    con = psycopg2.conect(
+    con = psycopg2.connect(
         user="fnx",
         password="move300",
         host="192.168.8.109",

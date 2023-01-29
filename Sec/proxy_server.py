@@ -34,13 +34,13 @@ class Forward:
 class TheServer:
     """Server Class."""
 
-    input_list = [] #type:list[str]
-    channel = {} #
+    input_list = []  # type:list[str]
+    channel = {}
 
     def __init__(self, host, port):
         """Server instance initialisation."""
         self.s = None
-        print('TheServer, __init__')
+        print('TheServer, self.__init__')
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server.bind((host, port))

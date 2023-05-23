@@ -24,13 +24,12 @@
 
 # consecutive strings : follow one after another without an interruption
 
+strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"]
+k = 2
+
 def longest_consec(strarr, k):
     if len(strarr) == 0 or k > len(strarr) or k <=0:
         return 
     else:
         
 
-
-
-strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"]
-k = 2

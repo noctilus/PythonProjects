@@ -1,7 +1,7 @@
 # import openai_secret_manager
 # import openai
 import requests
-
+from icecream import ic
 API_KEY = "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"
 ORGANIZATION_ID = "org-C2kvhijI4C3q2iOFpfdQxan9"
 
@@ -26,4 +26,5 @@ response = requests.post(
 
 # Print response
 z = response.json()
-print(response.json()["choices"][0]["text"])
+ic(z)
+# print(response.json()["choices"][0]["text"])

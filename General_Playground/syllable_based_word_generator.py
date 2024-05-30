@@ -2,6 +2,7 @@
 import random
 
 # Import the enchant module for checking the dictionary
+# the module is PyEnchant, many others exist 
 import enchant
 d = enchant.Dict("en_US")
 
@@ -39,7 +40,11 @@ syllables = ["a", "ab", "ac", "ad", "af", "ag", "al",
               "mu","moth","pic","im","coun","mon","pe",
               "lar","por","fi","bers","sec","ap","stud",
               "ad","tween","gan","bod","tence","ward",
-              "hap","nev","ure","mem","ters","cov","ger","nit"]
+              "hap","nev","ure","mem","ters","cov","ger","nit",
+              "zor", "gla", "vex", "quar", "plor", "thex", "dril", "snor", 
+              "krox", "ypt", "slith", "fryn", "flor", "glip", "snik", "tork", 
+              "kwor", "xyl", "shor", "thun","blip", "clon", "krel", "splor", "skra", 
+              "gron", "plix", "thrum", "blor", "snex"]
 
 # Define a function to generate a random name
 def generate_name():
@@ -59,7 +64,8 @@ def generate_name():
     name += syllable
   # Return the name
   return name
-
+e = d.__describe
+print(e)
 # Generate a random name that does not exist in the dictionary
 n=0
 name = generate_name()

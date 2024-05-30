@@ -24,5 +24,6 @@ client_socket, client_address = server.accept()
 # when accepted, the accept() method returns tuple on (conn,address)
 # ACHTUNG: address is a tuple of client's IP and port,
 # and conn is a new socket object to communicate with client!
-# accept() creates a new socket to release the bind() port for other connections
-print(f"server accepted connection from {client_address[0]}:{client_address[1]}")
+# accept() creates a new socket to release the bind() port
+# for other connections
+print(f"Accepted connection from {client_address[0]}:{client_address[1]}")

@@ -16,9 +16,11 @@ while True:
             if not data:
                 break
             log_file = open("temp.logs", "a", encoding="utf-8")
-            print("Data: ", data.decode("utf-8"))
-            data_to_write = f"{data.decode()}\n"
-            log_file.write(data_to_write)
-            log_file.close()
-            conn.sendall(data)
-            s.close()
+            try:
+                data_to_write = f"{data.decode()}\n"
+                log_file.write(data_to_write)
+                conn.sendall(data)
+                s.close()
+            except UnicodeError as e:
+                print(f"{e} \n")
+                pass

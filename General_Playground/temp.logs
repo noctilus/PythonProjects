@@ -1681,3 +1681,12 @@
 {"pressure": 99244.54, "temperature": 23.94, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 15, 46, 142897)"}
 {"pressure": 99247.48, "temperature": 23.94, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 15, 56, 252885)"}
 {"pressure": 99246.7, "temperature": 23.93, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 6, 372540)"}
+{"pressure": 99245.94, "temperature": 23.93, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 16, 492572)"}
+{"pressure": 99248.1, "temperature": 23.93, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 26, 622891)"}
+{"pressure": 99245.78, "temperature": 23.91, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 36, 742902)"}
+{"pressure": 99246.2, "temperature": 23.88, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 46, 912846)"}
+{"pressure": 99246.2, "temperature": 23.88, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 16, 57, 152900)"}
+{"pressure": 99249.07, "temperature": 23.88, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 17, 7, 273927)"}
+{"pressure": 99247.59, "temperature": 23.87, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 17, 17, 402922)"}
+{"pressure": 99246.72, "temperature": 23.86, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 17, 37, 662932)"}
+{"pressure": 99244.63, "temperature": 23.86, "machine_id": "083af2ac7060", "timestamp": "(2024, 5, 31, 4, 18, 17, 47, 773601)"}

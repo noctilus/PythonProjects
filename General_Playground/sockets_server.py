@@ -23,4 +23,9 @@ while True:
                 s.close()
             except UnicodeError as e:
                 print(f"{e} \n")
-                pass
+            except KeyboardInterrupt as e:
+                print(f"{e} \n Keyboard exit.")
+            except ConnectionError as e:
+                print(f"{e} \n, Connection error")
+            except Exception as e:
+                print(f"{e} \n, General catch all Exception")

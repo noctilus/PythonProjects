@@ -24,7 +24,8 @@ while True:
             except UnicodeError as e:
                 print(f"{e} \n")
             except KeyboardInterrupt as e:
-                print(f"{e} \n Keyboard exit.")
+                print(" Keyboard exit.")
+                exit()
             except ConnectionError as e:
                 print(f"{e} \n, Connection error")
             except Exception as e:

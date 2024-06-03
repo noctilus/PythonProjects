@@ -16,11 +16,12 @@ while True:
             data = conn.recv(1024)
             if not data:
                 break
-            if "machine_id" not in f"{data.decode(encoding="utf-8")}":
+            # data_to_write = data.decode(encoding="utf-8")
+            data_to_write = f"({data.decode}\n)"
+            if "machine_id" not in data_to_write:
                 break
             log_file = open("temp.logs", "a", encoding="utf-8")
             try:
-                data_to_write = f"{data.decode(encoding="utf-8")}\n"
                 print(data_to_write)
                 log_file.write(data_to_write)
                 conn.sendall(data)

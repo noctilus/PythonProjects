@@ -18,6 +18,7 @@ while True:
             log_file = open("temp.logs", "a", encoding="utf-8")
             try:
                 data_to_write = f"{data.decode()}\n"
+                print(data_to_write)
                 log_file.write(data_to_write)
                 conn.sendall(data)
                 s.close()

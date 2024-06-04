@@ -17,12 +17,12 @@ while True:
             if not data:
                 break
             # data_to_write = data.decode(encoding="utf-8")
-            data_to_write = f"({data.decode}\n)"
-            if "machine_id" not in data_to_write:
-                break
             log_file = open("temp.logs", "a", encoding="utf-8")
+            decoded_data = data.decode(encoding="utf-8")
+            print(decoded_data)
+            data_to_write = f"({decoded_data}\n)"
             try:
-                print(data_to_write)
+
                 log_file.write(data_to_write)
                 conn.sendall(data)
                 s.close()

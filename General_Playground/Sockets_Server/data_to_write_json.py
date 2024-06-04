@@ -18,7 +18,13 @@ dictionary = {
     "humidity": HUM,
 }
 
-json_object = json.dumps(dictionary, indent=4)
+json_object = json.dumps(dictionary)
 
-print(json_object)
-print(type(json_object))
+with open("json.txt", "a") as json_file:
+    json_file.write(json_object)
+    print("Writen to file ok")
+
+with open("json.txt", "r") as fil:
+    json_z_pliku = json.load(fil)
+    print(type(json_z_pliku))
+    print(json_z_pliku)

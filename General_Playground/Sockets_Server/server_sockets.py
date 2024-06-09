@@ -16,13 +16,11 @@ while True:
             data = conn.recv(1024)
             if not data:
                 break
-            # data_to_write = data.decode(encoding="utf-8")
-            log_file = open("temp.logs", "a", encoding="utf-8")
-            decoded_data = data.decode(encoding="utf-8")
-            print(decoded_data)
-            data_to_write = f"({decoded_data}\n)"
-            try:
-
+            try:            # data_to_write = data.decode(encoding="utf-8")
+                log_file = open("temp.logs", "a", encoding="utf-8")
+                decoded_data = data.decode(encoding="utf-8")
+                print(decoded_data)
+                data_to_write = f"({decoded_data}\n)"
                 log_file.write(data_to_write)
                 conn.sendall(data)
                 s.close()

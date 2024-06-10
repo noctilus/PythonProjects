@@ -16,7 +16,7 @@ while True:
             data = conn.recv(1024)
             if not data:
                 break
-            try:            # data_to_write = data.decode(encoding="utf-8")
+            try:  # data_to_write = data.decode(encoding="utf-8")
                 log_file = open("temp.logs", "a", encoding="utf-8")
                 decoded_data = data.decode(encoding="utf-8")
                 print(decoded_data)

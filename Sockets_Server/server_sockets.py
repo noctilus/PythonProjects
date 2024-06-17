@@ -21,15 +21,14 @@ while True:
             received_timestamp = time.time_ns()
             try:
                 # Can't use with open(): because there's a problem with
-                # Error handling
+                # Error handling later on.
                 log_file = open("temp.logs", "a", encoding="utf-8")
                 # decode received data from bytes to string
                 decoded_data = data.decode(encoding="utf-8")
-                print(decoded_data)
                 # decode string to json object
                 decoded_data = json.loads(decoded_data)
                 decoded_data.update({"received_timestamp": received_timestamp})
-                decoded_data.update({"sensor_ip": addr})
+                decoded_data.update({"sensor_ip": addr[0]})
                 print(decoded_data)
                 # format the json object to write to file and write
                 data_to_write = f"({decoded_data}\n)"

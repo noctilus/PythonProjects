@@ -101,6 +101,16 @@ class SshServerInterface(paramiko.ServerInterface):
     """
 
     def check_channel_request(self, kind, chanid):
+        # Verify the type of the channel,
+        # if kind == to session return OPEN_SUCCEEDED
+        # othervise OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
+        # Channels provide a secure communication route between
+        # the client and the host over an unsecure network.
+        # Since we are creating an SSH server, we need to be able
+        # to create these channels to allow clients to connect to us.
+        # For this, we will need to override check_channel_request()
+        # to return OPEN_SUCCEEDED when the kind of channel requested is a session
+
         if kind == "session":
             return paramiko.OPEN_SUCCEEDED
         return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
@@ -108,12 +118,19 @@ class SshServerInterface(paramiko.ServerInterface):
     def check_channel_pty_request(
         self, channel, term, width, height, pixelwidth, pixelheight, modes
     ):
+        # Next we need to override check_channel_pty_request() to return True.
+        # This allows our client to interact with our shell.
         return True
 
     def check_channel_shell_request(self, channel):
+        # Finally we can override check_channel_shell_request() to return True,
+        # which allows us to provide the channel with a shell we can connect to it (done in the next section)
         return True
 
     def check_auth_password(self, username, password):
+        # Check usernam and password
+        # and print to shell
+        print(username, " : ", password)
         if (username == "admin") and (password == "password"):
             return paramiko.AUTH_SUCCESSFUL
         return paramiko.AUTH_FAILED

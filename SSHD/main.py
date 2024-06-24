@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # ~/.ssh/id_rsa, or /home/username/.ssh/id_rsa
     #
     # If you put a password, include it as the second parameter, otherwise don't include it.
-    server = SshServer("C:/Users/ramon/.ssh/id_rsa")
+    server = SshServer("id_rsa")
 
     # Start the server, you can give it a custom IP address and port, or
     # leave it empty to run on 127.0.0.1:22

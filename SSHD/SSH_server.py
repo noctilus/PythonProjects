@@ -30,7 +30,7 @@ class ServerBase(ABC):
         # for incoming connections and data.
         self._listen_thread = None
 
-    def start(self, address="127.0.0.1", port=22, timeout=1):
+    def start(self, address="0.0.0.0", port=22, timeout=1):
         """
         Next we create the start() and stop() functions. These are relatively simple,
         but here's a quick explanation of both. start() will create the socket and

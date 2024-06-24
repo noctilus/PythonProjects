@@ -1,9 +1,10 @@
 import socket
 import threading
 from abc import ABC, abstractmethod
-from sys import platform
 
 import paramiko
+
+# from sys import platform
 
 
 class ServerBase(ABC):
@@ -91,7 +92,12 @@ class ServerBase(ABC):
 
 class SshServerInterface(paramiko.ServerInterface):
     """
-    Now we can override the methods that we need in order to get authentication to work. These are methods you can read about in the paramiko documentation link provide at the top of this section. If you omit these methods you won't be able to get your SSH client to connect to the server, since by default some of these methods will return values which block the connection.
+    Now we can override the methods that we need in order to get
+    authentication to work. These are methods you can read about
+    in the paramiko documentation link provide at the top of this section.
+    If you omit these methods you won't be able to get your SSH client to
+    connect to the server, since by default some of these methods will return
+    values which block the connection.
     """
 
     def check_channel_request(self, kind, chanid):
@@ -106,3 +112,50 @@ class SshServerInterface(paramiko.ServerInterface):
 
     def check_channel_shell_request(self, channel):
         return True
+
+    def check_auth_password(self, username, password):
+        if (username == "admin") and (password == "password"):
+            return paramiko.AUTH_SUCCESSFUL
+        return paramiko.AUTH_FAILED
+
+
+class SshServer(ServerBase):
+    """Creating the SSH Server
+    The SshServer class is where things start to get spicy. That said, the class
+    is actually very simple since we are just implementing the connection_function()
+    from the ServerBase class we created earlier. Let's start by importing some modules
+    we've created, as well as paramiko, and create our server class which will inherit
+    from ServerBase.
+    """
+
+    def __init__(self, host_key_file, host_key_file_password=None):
+        """
+        Next we need to add a property to our class which will hold the host's private RSA key.
+        We do this in the __init__() function and use paramiko's RSAKey.from_private_key_file() function.
+
+        """
+        super(SshServer, self).__init__()
+        self._host_key = paramiko.RSAKey.from_private_key_file(
+            host_key_file, host_key_file_password
+        )
+
+    def connection_function(self, client):
+        try:
+            session = paramiko.Transport(client)
+            session.add_server_key(self._host_key)
+
+            server = SshServerInterface()
+            try:
+                session.start_server(server=server)
+            except paramiko.SSHException:
+                return
+
+            channel = session.accept()
+            stdio = channel.makefile("rwU")
+
+            self.client_shell = Shell(stdio, stdio)
+            self.client_shell.cmdloop()
+
+            session.close()
+        except:
+            pass

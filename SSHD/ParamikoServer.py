@@ -1,6 +1,3 @@
-import paramiko
-
-
 # Create an SSH server
 class MySSHServer(paramiko.ServerInterface):
     """Server instance creation"""
